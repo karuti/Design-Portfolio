@@ -1,0 +1,291 @@
+@font-face {
+  font-family: "TT Hoves Hairline";
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-HairlineItalic.woff2");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-ExtraLightItalic.woff2");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "TT Hoves";
+
+  font-weight: 100;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Thin.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+
+  font-weight: 600;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-DemiBold.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: bold;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-BoldItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 900;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Black.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 200;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-ExtraLight.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Bold.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 100;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-ThinItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: normal;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Italic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 900;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-BlackItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 800;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-ExtraBold.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 600;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-DemiBoldItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-MediumItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 800;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-ExtraBoldItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Regular.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves Hairline";
+  font-weight: 100;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Hairline.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 300;
+  font-style: italic;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-LightItalic.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Light.woff2");
+}
+
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/Users/setup/Learn-react/designportfolio/static/font/TTHoves-Mediumc.woff2");
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: "TT Hoves", "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #131315;
+  background: #fbfffe;
+  word-wrap: break-word;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  scroll-behavior: smooth;
+}
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
