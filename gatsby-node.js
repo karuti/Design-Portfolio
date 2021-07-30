@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    const work = result.data.allContentfulProductPage.edges
+    const work = result.data.allContentfulWorkPortfolio.edges
     const posts = result.data.allContentfulBlogPost.edges
 
     //create blog posts page
@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       createPage({
         path: post.node.slug,
-        component: blogpost,
+        component: blogPost,
         context: {
           slug: post.node.slug,
           language: post.node.language,
@@ -62,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       createPage({
         path: workTemp.node.slug,
-        component: workpost,
+        component: workPage,
         context: {
           slug: workTemp.node.slug,
           previous,
