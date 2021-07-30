@@ -5,14 +5,6 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://www.karuti.info",
-        sitemap: "https://www.karuti.info/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -48,7 +40,7 @@ module.exports = {
     },
     `@contentful/rich-text-react-renderer`,
     `@contentful/rich-text-types`,
-    `gatsby-plugin-sitemap`,
+
     `gatsby-plugin-preload-fonts`,
     `gatsby-remark-social-cards`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
