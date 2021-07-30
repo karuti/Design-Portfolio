@@ -10,7 +10,6 @@ import {
   P,
   HeadingIntroBig,
   BigHeading,
-  HeadingLongTxt,
 } from "../components/TextStyles/textStyle"
 
 import CTA from "../components/Sections/cta"

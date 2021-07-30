@@ -1,0 +1,680 @@
+import React from "react"
+import { Link, graphql } from "gatsby"
+import styled from "styled-components"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "react-share"
+
+import {
+  DownloadButton,
+  ScheduleButton,
+} from "../components/Buttons/CtaButton.js"
+import Layout from "../components/Layout.js"
+import SEO from "../components/seo.js"
+
+import Header from "../components/sections/Header.js"
+import HeaderFR from "../components/sections/HeaderFR.js"
+import HeaderES from "../components/sections/HeaderES.js"
+import Footer from "../components/sections/Footer.js"
+import FooterFR from "../components/sections/FooterFR.js"
+import FooterES from "../components/sections/FooterES.js"
+import {
+  H1,
+  H2,
+  H3,
+  P,
+  Caption,
+  BlogText,
+} from "../components/styles/TextStyles.js"
+import { CategoryTagContainer, CategoryTag } from "../pages/blog.js"
+import CookiesBar from "../components/sections/cookies.js"
+
+class BlogPostTemplate extends React.Component {
+  render() {
+    const post = this.props.data.contentfulBlogPost
+
+    const shareUrl = this.props.data.site.siteMetadata.siteUrl
+    const shareSlug = this.props.data.contentfulBlogPost.slug
+
+    const options = {
+      renderNode: {
+        [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
+        [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
+        [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
+        [BLOCKS.PARAGRAPH]: (node, children) => <BlogText>{children}</BlogText>,
+        [BLOCKS.EMBEDDED_ENTRY]: (node, children) => (
+          <Link to={node.data.uri} target="_blank">
+            {children}
+          </Link>
+        ),
+        [BLOCKS.EMBEDDED_ASSET]: (node, children) => (
+          <Image>
+            <img
+              src={`https:${node.data.target.fields.file["en-US"].url}`}
+              alt=""
+            />
+          </Image>
+        ),
+        [INLINES.EMBEDDED_ENTRY]: (node, children) => (
+          <Link to={node.data.uri} target="_blank">
+            {children}
+          </Link>
+        ),
+        [INLINES.HYPERLINK]: (node, children) => {
+          if (node.data.uri.includes("player.vimeo.com/video")) {
+            return (
+              <IframeContainer>
+                <iframe
+                  title="Unique Title 001"
+                  src={node.data.uri}
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              </IframeContainer>
+            )
+          } else if (node.data.uri.includes("youtube.com/embed")) {
+            return (
+              <IframeContainer>
+                <iframe
+                  title="Unique Title 002"
+                  src={node.data.uri}
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  allowFullScreen
+                ></iframe>
+              </IframeContainer>
+            )
+          } else {
+            return (
+              <Link to={node.data.uri} target="_blank">
+                {children}
+              </Link>
+            )
+          }
+        },
+
+        [INLINES.ENTRY_HYPERLINK]: (node, children) => (
+          <Link to={node.data.uri} target="_blank">
+            {children}
+          </Link>
+        ),
+        [INLINES.ASSET_HYPERLINK]: (node, children) => (
+          <Link to={node.data.uri} target="_blank">
+            {children}
+          </Link>
+        ),
+      },
+      renderMark: {},
+    }
+
+    var headerMenu
+    if (post.language === "EN") {
+      headerMenu = <Header en="/blog" fr="/blog-fr" es="/blog-es" />
+    }
+    if (post.language === "FR") {
+      headerMenu = <HeaderFR en="/blog" fr="/blog-fr" es="/blog-es" />
+    }
+    if (post.language === "ES") {
+      headerMenu = <HeaderES en="/blog" fr="/blog-fr" es="/blog-es" />
+    }
+
+    var backLink
+    if (post.language === "EN") {
+      backLink = (
+        <Link to="/blog">
+          <BackGroup>
+            <BackIcon src={require("../../static/images/arrow_left.png")} />
+            <BackLabel>Back to All Posts</BackLabel>
+          </BackGroup>
+        </Link>
+      )
+    }
+    if (post.language === "FR") {
+      backLink = (
+        <Link to="/blog-fr">
+          <BackGroup>
+            <BackIcon src={require("../../static/images/arrow_left.png")} />
+            <BackLabel>Retour à tous les articles</BackLabel>
+          </BackGroup>
+        </Link>
+      )
+    }
+    if (post.language === "ES") {
+      backLink = (
+        <Link to="/blog-es">
+          <BackGroup>
+            <BackIcon src={require("../../static/images/arrow_left.png")} />
+            <BackLabel>Volver a todas las publicaciones</BackLabel>
+          </BackGroup>
+        </Link>
+      )
+    }
+
+    var formButton
+    if (post.language === "EN") {
+      formButton = (
+        <CTAForm>
+          <Link to="/schedule-demo">
+            <ScheduleButton id="scheduledemo">Schedule a Demo</ScheduleButton>
+          </Link>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.optimetriks.smala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DownloadButton id="download">Download Free Trial</DownloadButton>
+          </a>
+        </CTAForm>
+      )
+    }
+    if (post.language === "FR") {
+      formButton = (
+        <CTAForm>
+          <Link to="/schedule-demo-fr">
+            <ScheduleButton id="scheduledemo">Demander une demo</ScheduleButton>
+          </Link>{" "}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.optimetriks.smala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DownloadButton id="download">Essayer gratuitement</DownloadButton>
+          </a>
+        </CTAForm>
+      )
+    }
+    if (post.language === "ES") {
+      formButton = (
+        <CTAForm>
+          <Link to="/schedule-demo-es">
+            <ScheduleButton id="scheduledemo">Reserva una demo</ScheduleButton>
+          </Link>{" "}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.optimetriks.smala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DownloadButton id="download">
+              Descarga una prueba gratis
+            </DownloadButton>
+          </a>
+        </CTAForm>
+      )
+    }
+
+    var footerMenu
+    if (post.language === "EN") {
+      footerMenu = <Footer />
+    }
+    if (post.language === "FR") {
+      footerMenu = <FooterFR />
+    }
+    if (post.language === "ES") {
+      footerMenu = <FooterES />
+    }
+    //test
+    return (
+      <Layout location={this.props.location}>
+        <SEO
+          title={post.title}
+          description={post.metaDescription}
+          mainImage={`https:${post.image.file.url}`}
+        />
+        {headerMenu}
+        <BackContainerTop>{backLink}</BackContainerTop>
+        <Body>
+          <BannerGroup>
+            <Title>
+              <H1>{post.title}</H1>
+            </Title>
+            <CategoryGroup>
+              <CategoryTagContainer>
+                {post.categories.map(category => {
+                  return (
+                    <Link to={`/${category.slug}`}>
+                      <CategoryTag>{category.title}&#160;&#160;|</CategoryTag>
+                    </Link>
+                  )
+                })}
+              </CategoryTagContainer>
+            </CategoryGroup>
+            <BlogCreatedDate>{post.createdAt}</BlogCreatedDate>
+            <AuthorGroup>
+              <AuthorPic>
+                <img src={post.authorPicture.file.url} alt="" />
+              </AuthorPic>
+              <AuthorDetails>
+                <Link
+                  to={post.authorLinkedIn.json.content[0].content[1].data.uri}
+                  target="_blank"
+                >
+                  <AuthorName>{post.authorName}</AuthorName>
+                </Link>
+                <AuthorPosition>{post.authorPosition}</AuthorPosition>
+              </AuthorDetails>
+            </AuthorGroup>
+            <PostImage>
+              <img src={post.image.file.url} alt="" />
+            </PostImage>
+          </BannerGroup>
+
+          <BodyGroup>
+            {documentToReactComponents(post.content.json, options)}
+            <SocialshareButtons>
+              <FacebookShareButton
+                url={shareUrl + `/${shareSlug}`}
+                title={post.title}
+              >
+                <FacebookIcon
+                  size={48}
+                  borderRadius="12"
+                  iconFillColor="#fefefe"
+                />
+              </FacebookShareButton>
+              <TwitterShareButton
+                url={shareUrl + `/${shareSlug}`}
+                title={post.title}
+              >
+                <TwitterIcon
+                  size={48}
+                  borderRadius="12"
+                  iconFillColor="#fefefe"
+                />
+              </TwitterShareButton>
+              <LinkedinShareButton
+                url={shareUrl + `/${shareSlug}`}
+                title={post.title}
+              >
+                <LinkedinIcon
+                  size={48}
+                  borderRadius="12"
+                  iconFillColor="#fefefe"
+                />
+              </LinkedinShareButton>
+            </SocialshareButtons>
+          </BodyGroup>
+          <BottomCallToAction>
+            <CtaBackground>
+              <img
+                src={require("../../static/images/illustration.png")}
+                alt="Illustration"
+              />
+            </CtaBackground>
+            <CtaContent>
+              <CtaText>
+                <Tagline>
+                  {post.callToAction || "Digitise your field sales operations"}
+                </Tagline>
+                {formButton}
+              </CtaText>
+            </CtaContent>
+          </BottomCallToAction>
+        </Body>
+        <BackContainerBottom>{backLink}</BackContainerBottom>
+        {footerMenu}
+        <CookiesBar />
+      </Layout>
+    )
+  }
+}
+
+export default BlogPostTemplate
+
+export const BlogPostQuery = graphql`
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        siteUrl
+      }
+    }
+
+    contentfulBlogPost(slug: { eq: $slug }) {
+      slug
+      language
+      metaTitle
+      metaDescription
+      createdAt(formatString: "DD MMMM, YYYY")
+      title
+      categories {
+        language
+        title
+        slug
+      }
+
+      authorPicture {
+        file {
+          url
+        }
+      }
+      authorName
+      authorPosition
+      authorLinkedIn {
+        json
+      }
+      image {
+        file {
+          url
+        }
+      }
+      content {
+        json
+      }
+      callToAction
+    }
+  }
+`
+const BackContainerTop = styled.div`
+  display: grid;
+  justify-items: center;
+  margin: 8em 0 -5.6em 0;
+  padding: 0;
+  overflow-x: hidden;
+  @media (max-width: 32em) {
+    margin: 8em 0 -5.6em 2em;
+  }
+`
+const BackContainerBottom = styled.div`
+  display: grid;
+  justify-items: center;
+  margin: 1.5em 0 8em 0;
+  padding: 0;
+  overflow-x: hidden;
+  @media (max-width: 32em) {
+    margin: 0.5em 0 6em 2em;
+  }
+`
+const BackGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: flex-start;
+  width: 60em;
+  margin: 0;
+  padding: 0;
+  :hover {
+    transform: scale(1.1) translate(2.5em, 0);
+  }
+`
+const BackIcon = styled.img`
+  align-self: center;
+  height: 0.8em;
+  margin: 0 0.4em 0 0;
+  padding: 0;
+`
+const BackLabel = styled.div`
+  align-self: center;
+  font-weight: 600;
+  font-size: 1em;
+  color: #6c6c6c;
+  margin: -0.1em 0 0 0;
+  padding: 0;
+`
+const Body = styled.div`
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+`
+const BannerGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  position: relative;
+  max-width: 64em;
+  margin: 8em 0 auto 0;
+  padding: 0;
+  @media (max-width: 32em) {
+    margin: 8em 0 0 0;
+    width: 20em;
+  }
+`
+const Title = styled.div`
+  display: grid;
+  margin: 0 4em 0 2em;
+  @media (max-width: 32em) {
+    margin: 0 5em 0 0;
+    font-size: 0.6em;
+  }
+`
+const CategoryGroup = styled.div`
+  display: grid;
+  margin: 0.5em 0 1.5em 2.1em;
+  padding: 0;
+  @media (max-width: 32em) {
+    margin: 0.5em 0 2.5em 0;
+  }
+`
+const BlogCreatedDate = styled.div`
+  display: grid;
+  margin: 0em 0 2em 2.1em;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #6c6c6c;
+`
+const AuthorGroup = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+  justify-content: flex-start;
+  margin: 0 0 0 2em;
+  padding: 0;
+`
+const AuthorPic = styled.div`
+  margin: 0 0 0 2em;
+  img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+`
+const AuthorDetails = styled.div`
+  margin: -4px 0 0 0;
+`
+const AuthorName = styled(P)`
+  padding: 0 0 0 0;
+  font-size: 1.25em;
+  margin: 0 0 0 0;
+  font-weight: 800;
+  color: #febd55;
+`
+const AuthorPosition = styled(Caption)`
+  margin: 0 0.1em 0 0;
+  padding: 0 0.5em 0 0;
+  font-size: 1em;
+  font-weight: 600;
+`
+
+const PostImage = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 64em;
+  border: 0.05em solid #6c6c6c10;
+  img {
+    margin: 0;
+    padding: 0;
+    width: 64em;
+    max-height: 45em;
+    object-fit: cover;
+  }
+  @media (max-width: 32em) {
+    display: grid;
+    align-self: center;
+    margin: 0 0 2em -3em;
+    width: 26em;
+  }
+`
+const Image = styled.div``
+
+const BodyGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  justify-self: left;
+  max-width: 40em;
+  margin: 3em auto 4em 8em;
+  padding: 0;
+  img {
+    margin: 1em 1em 1em 0;
+    padding: 0;
+    width: 39em;
+    max-height: 40em;
+    object-fit: contain;
+  }
+  a {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #febd55;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0.1em;
+    :hover {
+      font-weight: 700;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  @media (max-width: 32em) {
+    margin: 0 1em 2em 2.5em;
+    width: 19em;
+    img {
+      margin: 1em 1em 1em 0;
+      width: 18.5em;
+    }
+    p,
+    a {
+      margin: 0 1em 1em 0;
+      width: 15em;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 1em 1em 1em 0;
+      width: 10em;
+    }
+    ul,
+    li {
+      margin: 0 10em 0 0.5em !important;
+      width: 12em !important;
+    }
+  }
+`
+//Bottom Call To Action
+const BottomCallToAction = styled.div`
+  position: relative;
+  display: grid;
+  max-width: 72em;
+  margin: 200px 0px 280px 0px;
+  padding: 0;
+  @media (max-width: 768px) {
+    width: 600px;
+  }
+  @media (max-width: 450px) {
+    width: 20em !important;
+    margin: 100px 0px;
+  }
+`
+const CtaBackground = styled.div`
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+`
+
+const CtaContent = styled.div`
+  position: relative;
+  display: grid;
+  max-width: 72em;
+  background: #fefefe;
+  box-shadow: 0 0.5em 2em #00000018;
+  margin: 0 0 4em 0;
+  padding: 2.5em 8em 7.5em 8em;
+  @media (max-width: 32em) {
+    width: 24em;
+    margin: 0 0 4em 0;
+    padding: 1em 2em 3em 2em;
+  }
+  @media (max-width: 450px) {
+    width: 21em;
+  }
+`
+const Tagline = styled(H2)`
+  padding: 10px 0px 0px 0px;
+  max-width: 900px;
+  @media (max-width: 450px) {
+    padding: 10px 0px 40px 0px;
+    width: auto;
+  }
+`
+const CtaText = styled.div`
+  position: relative;
+  align-self: center;
+
+  color: #2a2a2a;
+  max-width: 56em;
+
+  z-index: 2;
+  h2 {
+    font-size: 3.25em;
+  }
+  @media (max-width: 32em) {
+    width: 24em;
+    margin: 0;
+    padding: 0;
+    h2 {
+      font-size: 2.5em;
+      margin: 1.2em 1.2em 1em 0;
+    }
+  }
+  @media (max-width: 450px) {
+    max-width: 360px;
+    margin: 0;
+    padding: 0;
+  }
+`
+
+const CTAForm = styled.div`
+  margin: -20px 0 0 0;
+  max-width: 640px;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 20px;
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
+`
+//Youtube video embed
+const IframeContainer = styled.span`
+  padding-bottom: 56.25%;
+  position: relative;
+  display: block;
+  width: 100%;
+
+  > iframe {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+`
+//Share buttons styling
+const SocialshareButtons = styled.div`
+  margin: 20px 000;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: flex-start;
+  grid-gap: 40px;
+`

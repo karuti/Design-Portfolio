@@ -9,7 +9,6 @@ import {
   H2,
   P,
   HeadingIntroBig,
-  BigHeading,
   HeadingLongTxt,
 } from "../components/TextStyles/textStyle"
 

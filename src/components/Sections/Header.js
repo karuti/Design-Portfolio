@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { H2, H4, HeadingintroTxt, Menu } from "../TextStyles/textStyle"
+import { Menu } from "../TextStyles/textStyle"
 
 function Header(props) {
   return (

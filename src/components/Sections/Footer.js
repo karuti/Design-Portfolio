@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { H2, H3, Menu, P } from "../TextStyles/textStyle"
+import { H3, Menu, P } from "../TextStyles/textStyle"
 
 function Footer(props) {
   return (
