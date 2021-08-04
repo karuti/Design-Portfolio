@@ -56,4 +56,10 @@ const TTWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
 `
-const Title = styled(H2)``
+const Title = styled(H2)`
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 0;
+    padding: 0 24px 80px 24px;
+  }
+`

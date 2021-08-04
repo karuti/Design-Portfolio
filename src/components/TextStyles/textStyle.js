@@ -142,6 +142,9 @@ export const Input = styled.input`
   font-size: 1.2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media (max-width: 450px) {
+    width: 12em;
+  }
 `
 
 export const Label = styled.label`

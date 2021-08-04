@@ -24,16 +24,16 @@ function Footer(props) {
             <MenuLink>Home</MenuLink>
           </Link>
 
-          <Link to="/">
+          <Link to="/about">
             <MenuLink>About</MenuLink>
           </Link>
-          <Link to="/">
+          <Link to="/work">
             <MenuLink>Work</MenuLink>
           </Link>
-          <Link to="/">
+          <Link to="/blog">
             <MenuLink>Blog</MenuLink>
           </Link>
-          <Link to="/">
+          <Link to="/contact">
             <MenuLink>Contact</MenuLink>
           </Link>
         </Menugroup>
@@ -44,14 +44,10 @@ function Footer(props) {
         </Menugroup>
         <Menugroup>
           <Title>Socials</Title>
-          <Link to="/">
+          <Link to="https://www.linkedin.com/in/karuti-joy-61a47615b/">
             <MenuLink>LinkedIn</MenuLink>
           </Link>
-
-          <Link to="/">
-            <MenuLink>Instagram</MenuLink>
-          </Link>
-          <Link to="/">
+          <Link to="https://twitter.com/JoyKaruti">
             <MenuLink>Twitter</MenuLink>
           </Link>
         </Menugroup>
@@ -72,6 +68,9 @@ const FooterContentWrapper = styled.div`
   grid-template-columns: repeat(4, auto);
   margin: 0 auto;
   padding: 48px;
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, auto);
+  }
 `
 
 const Logo = styled.div`
