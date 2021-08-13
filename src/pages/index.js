@@ -24,26 +24,14 @@ function IndexPage() {
         description="At optimetriks i’m designing a field force automation software
         that helps manufactures /brands to managr their field sales."
         projectlink="View Work"
-        featureImage={
-          <img
-            src="images/Fp-mockup.png"
-            styke={{ width: "560px", height: "600px" }}
-            alt=""
-          />
-        }
+        featureImage={<img src="images/Fp-mockup.png" alt="" />}
       />
       <FeaturedWork
         companyName="MaridiCouture"
         projectTitle="BeautyBar"
         description="An an ecommerce website that sells original makeup and skincare products.The client wanted a minimal millennial website that is responsive."
         projectlink="View Work"
-        featureImage={
-          <img
-            src="images/beautybar2.png"
-            styke={{ width: "560px", height: "600px" }}
-            alt=""
-          />
-        }
+        featureImage={<img src="images/beautybar2.png" alt="" />}
       />
       <CTA ctatext="Like what you see?" buttontext="Get In Touch" />
       <Footer />

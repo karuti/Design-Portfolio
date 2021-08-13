@@ -33,8 +33,8 @@ const FeaturedWorkwrapper = styled.div`
   grid-template-columns: 560px 560px;
   grid-gap: 80px;
   @media (max-width: 450px) {
-    max-width: 350px;
-    margin: 0;
+    max-width: 320px;
+    margin: 80px 0 120px 0;
     grid-template-columns: repeat(1, auto);
     grid-gap: 0;
   }
@@ -49,9 +49,15 @@ const Description = styled.div`
   }
 `
 const WorkImage = styled.div`
+  img {
+    width: 640px;
+    height: 480px;
+  }
   @media (max-width: 450px) {
-    transform: scale(0.3);
-    margin: 0px 0 0 -400px;
+    img {
+      width: 320px;
+      height: 240px;
+    }
   }
 `
 const CompanyName = styled(Extradetail)``

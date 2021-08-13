@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import Header from "../components/Sections/Header.js"
-
+import { Parallax } from "react-parallax"
 import Footer from "../components/Sections/Footer.js"
 import {
   H2,
@@ -26,8 +26,36 @@ function About() {
       </Introsection>
       <AboutSection>
         <Mypic>
-          {" "}
-          <img style={{ borderRadius: "4%" }} src="images/joy.jpg" alt="" />
+          <Parallax
+            style={{
+              height: "560px",
+              borderRadius: "50%",
+            }}
+            bgImage="images/joy.jpg"
+            bgImageStyle={{
+              margin: "180px 0 0 0",
+              height: "480px",
+              maxWidth: "480px",
+              borderRadius: "50%",
+            }}
+            strength={-200}
+          >
+            <div
+              style={{
+                height: "500px",
+                width: "640px ",
+                borderRadius: "50%",
+              }}
+            >
+              <div>
+                {" "}
+                {/* <img
+                        src={indexContent.node.bodySectionImage1.file.url}
+                        alt=""
+                      /> */}
+              </div>
+            </div>
+          </Parallax>{" "}
         </Mypic>
         <Contentrow>
           <DetailsReadfirst>
@@ -92,13 +120,26 @@ export default About
 const Introsection = styled.div`
   max-width: 1280px;
   margin: 160px auto;
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 120px 0 80px 0px;
+  }
 `
 const Contentwrapper = styled.div`
   max-width: 840px;
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 0 32px 0 32px;
+  }
 `
 
 const Title1 = styled(HeadingIntroBig)`
   padding: 20px 0px 20px 0px;
+  @media (max-width: 450px) {
+    font-size: 64px;
+    max-width: 350px;
+    padding: 40px 0px 0px 0px;
+  }
 `
 const AboutSection = styled.div`
   max-width: 1280px;
@@ -106,10 +147,20 @@ const AboutSection = styled.div`
   display: grid;
   grid-template-columns: 600px 600px;
   grid-gap: 80px;
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 0;
+    padding: 0 32px 80px 32px;
+    grid-template-columns: repeat(1, auto);
+    gap: 20px;
+  }
 `
 const Contentrow = styled.div``
 const Mypic = styled.div`
   padding: 40px 000;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 
 const DetailsReadfirst = styled(H2)``
@@ -120,6 +171,13 @@ const ToolsSection = styled.div`
   display: grid;
   grid-template-columns: 600px 600px;
   grid-gap: 80px;
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 0;
+    padding: 0 32px 80px 32px;
+    grid-template-columns: repeat(1, auto);
+    gap: 40px;
+  }
 `
 const TitleSection = styled(BigHeading)``
 const ToolsTitle = styled(BigHeading)``
@@ -127,5 +185,12 @@ const DetailsSection = styled.div`
   display: grid;
   grid-template-columns: 160px auto auto;
   grid-gap: 80px;
+  @media (max-width: 450px) {
+    max-width: 350px;
+    margin: 0;
+    padding: 0 24px 80px 24px;
+    grid-template-columns: repeat(1, auto);
+    gap: 0px;
+  }
 `
 const ToolRow = styled(P)``

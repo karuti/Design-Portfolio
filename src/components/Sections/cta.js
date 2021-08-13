@@ -19,6 +19,9 @@ export default CTA
 const CTAwrapper = styled.div`
   max-width: 1280px;
   margin: 160px auto;
+  @media (max-width: 450px) {
+    margin: 0 24px 120px 24px;
+  }
 `
 const CtaText = styled(HeadingLongTxt)`
   max-width: 800px;
