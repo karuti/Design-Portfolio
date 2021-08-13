@@ -33,7 +33,7 @@ const FeaturedWorkwrapper = styled.div`
   grid-template-columns: 560px 560px;
   grid-gap: 80px;
   @media (max-width: 450px) {
-    max-width: 320px;
+    max-width: 350px;
     margin: 80px 0 120px 0;
     grid-template-columns: repeat(1, auto);
     grid-gap: 0;

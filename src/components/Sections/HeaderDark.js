@@ -49,6 +49,18 @@ const MenuItems = styled.div`
   display: grid;
   grid-template-columns: repeat(5, auto);
   padding: 24px 0 24px 0;
+  @media (max-width: 32em) {
+    display: none;
+    grid-template-columns: repeat(1, auto);
+    justify-items: flex-start;
+    width: 24em;
+    display: ${({ menuOpen }) => (menuOpen ? "grid" : "none")};
+    margin: 5em 0 20em 5em;
+    a {
+      font-size: 1.5em;
+      font-weight: 800;
+    }
+  }
 `
 const MenuLink = styled(H2)`
   text-decoration: none;
