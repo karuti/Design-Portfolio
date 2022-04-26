@@ -6,7 +6,7 @@ import { HeadingIntroBig, HeadingintroTxt } from "../TextStyles/textStyle"
 function Intro(props) {
   return (
     <Introwrapper>
-      <SmallDescription>Hello, i am Karuti Joy</SmallDescription>
+      <SmallDescription>Hello, i am Joy</SmallDescription>
       <Title1>Product Designer</Title1>
       <And>&</And>
       <Title2>UI Developer</Title2>

@@ -5,7 +5,7 @@ import SEO from "../components/layout/seo"
 import Header from "../components/Sections/Header.js"
 import Intro from "../components/Sections/intro.js"
 import Footer from "../components/Sections/Footer.js"
-import { H2 } from "../components/TextStyles/textStyle"
+import { H1, H2 } from "../components/TextStyles/textStyle"
 import FeaturedWork from "../components/Sections/featured"
 import CTA from "../components/Sections/cta"
 import { gsap } from "gsap"
@@ -17,7 +17,7 @@ function IndexPage() {
       <Header />
       <Intro />
       <TTWrapper>
-        <Title>Feautured Work</Title>
+        <Title>Featured Work</Title>
       </TTWrapper>
       <FeaturedWork
         companyName="Optimetriks"
@@ -40,7 +40,7 @@ const TTWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
 `
-const Title = styled(H2)`
+const Title = styled(H1)`
   @media (max-width: 450px) {
     max-width: 350px;
     margin: 0;

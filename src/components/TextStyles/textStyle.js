@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const HeadingIntroBig = styled.h1`
-  font-weight: 700;
+  font-weight: 600;
   font-size: 84px;
   line-height: 1.25;
   margin: 0 0 0 0;

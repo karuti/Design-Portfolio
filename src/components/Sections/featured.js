@@ -32,7 +32,7 @@ export default FeaturedWork
 
 const FeaturedWorkwrapper = styled.div`
   max-width: 1280px;
-  margin: 0px auto 160px auto;
+  margin: 80px auto 160px auto;
   display: grid;
   grid-template-columns: 560px 560px;
   grid-gap: 80px;
