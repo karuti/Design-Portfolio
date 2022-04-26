@@ -144,15 +144,15 @@ function BrandAwareness() {
               </ProjectContent>
             </ProjectInstance>
           </Link>
-          <Link to="/determining-product-metrics">
+          <Link to="/conditions">
             <ProjectInstance>
               <ProjectCover>
                 {" "}
                 <img src="/images/bg-small.png" alt="" />
               </ProjectCover>
               <ProjectContent>
-                <ProjectTitle>Determining product metrics</ProjectTitle>
-                <Projecttag>UX Metrics</Projecttag>
+                <ProjectTitle>Conditional Design</ProjectTitle>
+                <Projecttag>Web</Projecttag>
               </ProjectContent>
             </ProjectInstance>
           </Link>
