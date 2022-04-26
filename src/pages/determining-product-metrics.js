@@ -17,61 +17,76 @@ import {
 
 import CTA from "../components/Sections/cta"
 
-function Work() {
+function ProductMetrics() {
   return (
     <Layout>
       <SEO title="Home" />
       <Header />
 
       <MainImage>
-        <img src="/images/fp case study.jpg" alt="" />
+        <img src="/images/conditional.png" alt="" />
       </MainImage>
       <Contentwrapper>
         <Link to="https://fieldproapp.com/">
           {" "}
-          <Title1>FieldPro by Optimetriks</Title1>
+          <Title1>Conditional Design</Title1>
         </Link>
         <SmallDescription>
-          FieldPro is a Saas solution for the field force automation domain.The
-          service is marketed towards African and Latin American markets and the
-          target customers are distributor and manufacturers who need to keep
-          track of their field operations.
+          <RolesTitle>Problem Definition</RolesTitle>
+          Our systems rely on a condition building system.We need to be simplify
+          this process for our internal users.We are trying to create a simple
+          way for operations team when setting up clients to easily use
+          conditions to manipulate the display of questions or activities.
+          <br></br>
+          <br></br> <RolesTitleSmall> Who?</RolesTitleSmall>
+          This is mostly used by operations team when setting up their clients
+          environments.
+          <br></br> <RolesTitleSmall>What ?</RolesTitleSmall> It is a feature
+          that allows you to create a condition, manipulate the system to act in
+          a certain way based on a given output. <br></br>
+          <RolesTitleSmall>Where?</RolesTitleSmall> In workflows section of the
+          app<br></br>
+          <RolesTitleSmall>Why?</RolesTitleSmall>
+          Decide on sequencing of the questions based on set conditions.
+          Questions will be shown on the workflow based on the options selected.
+          I.e Did you make a sale? Yes/No.If no then you won't be asked to
+          mentioned the products sold. If yes you will have to input the
+          products.
+          <br></br> <RolesTitleSmall>How? </RolesTitleSmall>The system behaves
+          according to the conditions given,this feature allows you to create
+          those conditions between constant value or system fields.
           <br></br>
           <br></br>
-          The product seeks to solve the problem of digitizing the process of
-          data collection by field agents of various brands.This benefits the
-          brands by helping to easily manage their day-to-day field operations
-          with real time data and achieve high levels of efficiency.
-          <br></br>
-          <br></br>
-          The service is cloud based, and is accessed through their mobile and
-          web platforms.The service can also be integrated with other existing
-          software platforms such as freshdesk,zendesk and works as an
-          integrated part of that solution.
-          <br></br>
-          <br></br>
-          My role here is to translate requirements into easy to use design that
-          can be implemented into the systems.
-        </SmallDescription>
-        <RolesTitle>Key Skills</RolesTitle>
-        <SmallDescription>
+          <RolesTitle>Ideation </RolesTitle>
+          This are the important touchpoints we want to keep in mind <br></br>
           <ul>
-            <li> User Research </li>
-            <li> Wireframing </li>
-            <li> Visual Design </li>
-            <li> Prototyping </li>
-            <li> Digital Marketing </li>
-            <li> Coding </li>
+            <ContentList>
+              {" "}
+              As a web user i should know which questions are linked
+            </ContentList>
+            <ContentList>
+              As a web user i should be able to pick the variables and
+              operations easily
+            </ContentList>
+            <ContentList>
+              As a web user i should be able to nest the operands with ease
+            </ContentList>
           </ul>
-        </SmallDescription>
-        <RolesTitle>Collaborators</RolesTitle>
-        <SmallDescription>
-          <ul>
-            <li> Product team </li>
-            <li> Marketing team </li>
-            <li> Developers </li>
-            <li> Customer success team </li>
-          </ul>
+          <RolesTitle>Visual Design </RolesTitle>
+          <img
+            src="/images/Single operation answers.jpg"
+            alt=""
+            style={{ width: "900px" }}
+          />
+          <br></br>
+          <br></br>
+          <img
+            src="/images/conditions snnipet.png"
+            alt=""
+            style={{ width: "900px" }}
+          />
+          <br></br>
+          <br></br>
         </SmallDescription>
       </Contentwrapper>
       <TTWrapper>
@@ -81,7 +96,7 @@ function Work() {
             <ProjectInstance>
               <ProjectCover>
                 {" "}
-                <img src="/images/bg-dark.jpg" alt="" />
+                <img src="/images/bg-small.png" alt="" />
               </ProjectCover>
               <ProjectContent>
                 <ProjectTitle>Brand awareness and positioning</ProjectTitle>
@@ -118,18 +133,6 @@ function Work() {
               </ProjectContent>
             </ProjectInstance>
           </Link>
-          <Link to="/determining-product-metrics">
-            <ProjectInstance>
-              <ProjectCover>
-                {" "}
-                <img src="/images/bg-small.png" alt="" />
-              </ProjectCover>
-              <ProjectContent>
-                <ProjectTitle>Determining product metrics</ProjectTitle>
-                <Projecttag>UX Metrics</Projecttag>
-              </ProjectContent>
-            </ProjectInstance>
-          </Link>
         </Workrow>
       </TTWrapper>
       <CTA ctatext="Like what you see?" buttontext="Get In Touch" />
@@ -138,7 +141,7 @@ function Work() {
   )
 }
 
-export default Work
+export default ProductMetrics
 const TTWrapper = styled.div`
   max-width: 1280px;
   margin: 160px auto;
@@ -193,7 +196,6 @@ const ProjectInstance = styled.div`
 
   border-radius: 4px;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
-
   :hover {
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.15);
   }
@@ -224,6 +226,7 @@ const ProjectTitle = styled(H2)`
   padding: 0;
 `
 const RolesTitle = styled(H2)``
+const RolesTitleSmall = styled(H4)``
 const Projecttag = styled.button`
   padding: 4px 8px;
   margin: 0;
@@ -234,4 +237,9 @@ const Projecttag = styled.button`
   background: #fefefe;
   font-size: 12px;
   font-weight: 400;
+`
+const ContentList = styled.li`
+  margin: 0 0 12px 48px;
+  padding: 0;
+  list-style-type: disc;
 `

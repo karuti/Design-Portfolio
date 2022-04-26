@@ -55,7 +55,7 @@ export const H1 = styled.h1`
   -moz-osx-font-smoothing: grayscale;
 `
 export const H2 = styled.h2`
-  font-weight: 500;
+  font-weight: 600;
   font-size: 32px;
   line-height: 1.25;
   margin: 1em 0 1em 0;
@@ -85,7 +85,7 @@ export const H4 = styled.h4`
 export const P = styled.p`
   font-weight: 400;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 2;
   margin: 0 0 1em 0;
   color: #131315;
   -webkit-font-smoothing: antialiased;

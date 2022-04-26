@@ -8,6 +8,7 @@ import Footer from "../components/Sections/Footer.js"
 import { H2 } from "../components/TextStyles/textStyle"
 import FeaturedWork from "../components/Sections/featured"
 import CTA from "../components/Sections/cta"
+import { gsap } from "gsap"
 
 function IndexPage() {
   return (
@@ -22,17 +23,12 @@ function IndexPage() {
         companyName="Optimetriks"
         projectTitle="FieldPro"
         description="At optimetriks i’m designing a field force automation software
-        that helps manufactures /brands to managr their field sales."
+        that helps manufactures /brands to manage their field sales."
+        pageurl="/work"
         projectlink="View Work"
         featureImage={<img src="images/Fp-mockup.png" alt="" />}
       />
-      <FeaturedWork
-        companyName="MaridiCouture"
-        projectTitle="BeautyBar"
-        description="An an ecommerce website that sells original makeup and skincare products.The client wanted a minimal millennial website that is responsive."
-        projectlink="View Work"
-        featureImage={<img src="images/beautybar2.png" alt="" />}
-      />
+
       <CTA ctatext="Like what you see?" buttontext="Get In Touch" />
       <Footer />
     </Layout>

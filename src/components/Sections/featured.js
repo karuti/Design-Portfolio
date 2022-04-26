@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 import { Extradetail, H2, P } from "../TextStyles/textStyle"
 
@@ -10,6 +11,7 @@ function FeaturedWork(props) {
     description,
     projectlink,
     featureImage,
+    pageurl,
   } = props
 
   return (
@@ -18,7 +20,9 @@ function FeaturedWork(props) {
         <CompanyName>{companyName || "Company Name "}</CompanyName>
         <ProjectTitle>{projectTitle || "Project Title "}</ProjectTitle>
         <Descirption>{description || "Description "}</Descirption>
-        <ProjectLink>{projectlink || "Project Link"}</ProjectLink>
+        <Link to={pageurl}>
+          <ProjectLink>{projectlink || "Project Link"}</ProjectLink>
+        </Link>
       </Description>
       <WorkImage>{featureImage}</WorkImage>
     </FeaturedWorkwrapper>
@@ -41,7 +45,7 @@ const FeaturedWorkwrapper = styled.div`
 `
 const Description = styled.div`
   max-width: 640px;
-  margin: 280px 0 0 0;
+  margin: 80px 0 0 0;
   @media (max-width: 450px) {
     max-width: 350px;
     margin: 0;

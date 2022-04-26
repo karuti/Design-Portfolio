@@ -7,9 +7,9 @@ function Intro(props) {
   return (
     <Introwrapper>
       <SmallDescription>Hello, i am Karuti Joy</SmallDescription>
-      <Title1>UX - UI DESIGNER</Title1>
+      <Title1>Product Designer</Title1>
       <And>&</And>
-      <Title2>UI DEVELOPER</Title2>
+      <Title2>UI Developer</Title2>
     </Introwrapper>
   )
 }

@@ -74,6 +74,7 @@ class Contact extends Component {
           <ContactForm>
             <form id="leadform" method="post" onSubmit={this.handleSubmit}>
               <FormTitle>Get In Touch</FormTitle>
+              {this.state.submitting ? sucessMessage : ""}
               <FormGroup>
                 <Label>First Name</Label>
                 <Input type="text" name="FullName" id="name" required />
@@ -92,7 +93,6 @@ class Contact extends Component {
                 Send
               </Button>
             </form>
-            {this.state.submitting ? sucessMessage : ""}
           </ContactForm>
         </Contactwrapper>
         <Footer />

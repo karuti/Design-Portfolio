@@ -6,26 +6,26 @@ import { H2 } from "../TextStyles/textStyle"
 function HeaderDark(props) {
   return (
     <Headerwrapper>
-      <Logo>
-        <img
-          src="/images/Black bg  Logo.png"
-          style={{ width: "160px" }}
-          alt=""
-        />
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img
+            src="/images/Black bg  Logo.png"
+            style={{ width: "160px" }}
+            alt=""
+          />
+        </Logo>
+      </Link>
+
       <MenuItems>
-        <Link to="/">
-          <MenuLink>Home</MenuLink>
-        </Link>
         <Link to="/about">
           <MenuLink>About</MenuLink>
         </Link>
         <Link to="/work">
           <MenuLink>Work</MenuLink>
         </Link>
-        <Link to="/blog">
+        {/* <Link to="/blog">
           <MenuLink>Blog</MenuLink>
-        </Link>
+        </Link> */}
         <Link to="/contact">
           <MenuLink>Contact</MenuLink>
         </Link>

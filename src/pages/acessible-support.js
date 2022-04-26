@@ -17,61 +17,65 @@ import {
 
 import CTA from "../components/Sections/cta"
 
-function Work() {
+function Support() {
   return (
     <Layout>
       <SEO title="Home" />
       <Header />
-
       <MainImage>
-        <img src="/images/fp case study.jpg" alt="" />
+        <img src="/images/help.png" alt="" />
       </MainImage>
       <Contentwrapper>
         <Link to="https://fieldproapp.com/">
           {" "}
-          <Title1>FieldPro by Optimetriks</Title1>
+          <Title1> How to make users aware of our help center?</Title1>
         </Link>
         <SmallDescription>
-          FieldPro is a Saas solution for the field force automation domain.The
-          service is marketed towards African and Latin American markets and the
-          target customers are distributor and manufacturers who need to keep
-          track of their field operations.
+          <RolesTitle>Problem Definition</RolesTitle>
+          We have a vast support center with articles on common problems, quick
+          fixes and tips for when using our systems. However our users were not
+          aware of this resource and instead kept making suport calls and
+          tickets for issues that they could easily resolve on their own.
           <br></br>
           <br></br>
-          The product seeks to solve the problem of digitizing the process of
-          data collection by field agents of various brands.This benefits the
-          brands by helping to easily manage their day-to-day field operations
-          with real time data and achieve high levels of efficiency.
+          We would be designing this solution for our mobile and web user
+          segements.
+          <RolesTitle>Setting up the metric</RolesTitle>
+          We believe that making our support center easily acessible for mobile
+          and web users will achieve increased users traffic to the support
+          center and less support tickets.
           <br></br>
           <br></br>
-          The service is cloud based, and is accessed through their mobile and
-          web platforms.The service can also be integrated with other existing
-          software platforms such as freshdesk,zendesk and works as an
-          integrated part of that solution.
-          <br></br>
-          <br></br>
-          My role here is to translate requirements into easy to use design that
-          can be implemented into the systems.
-        </SmallDescription>
-        <RolesTitle>Key Skills</RolesTitle>
-        <SmallDescription>
+          <RolesTitle>Ideation</RolesTitle>
+          After brainstorming we came up with the following ideas:
           <ul>
-            <li> User Research </li>
-            <li> Wireframing </li>
-            <li> Visual Design </li>
-            <li> Prototyping </li>
-            <li> Digital Marketing </li>
-            <li> Coding </li>
+            <ContentList>
+              {" "}
+              Since the customer sucess team always communicate with the users
+              through emails, one way would be to have a banner at the email
+              signature that highlights the help center.
+            </ContentList>
+            <ContentList>
+              {" "}
+              The second way would be to add a direct link to the help center in
+              both the web and mobile apps.
+            </ContentList>
           </ul>
+          <br></br>
+          <br></br>
+          <RolesTitle>Visual Design</RolesTitle>
+          The final design would then look like this.To be placed on the email
+          signatures.{" "}
         </SmallDescription>
-        <RolesTitle>Collaborators</RolesTitle>
+      </Contentwrapper>
+      <PortfolioImage>
+        <img src="/images/Support center banner.png" alt="" />
+      </PortfolioImage>{" "}
+      <Contentwrapper>
+        <RolesTitle>Impact</RolesTitle>{" "}
         <SmallDescription>
-          <ul>
-            <li> Product team </li>
-            <li> Marketing team </li>
-            <li> Developers </li>
-            <li> Customer success team </li>
-          </ul>
+          We saw a tremendous increase in the amount of web traffic to the help
+          center and more users started using the help center.
         </SmallDescription>
       </Contentwrapper>
       <TTWrapper>
@@ -81,7 +85,7 @@ function Work() {
             <ProjectInstance>
               <ProjectCover>
                 {" "}
-                <img src="/images/bg-dark.jpg" alt="" />
+                <img src="/images/bg-small.png" alt="" />
               </ProjectCover>
               <ProjectContent>
                 <ProjectTitle>Brand awareness and positioning</ProjectTitle>
@@ -104,20 +108,7 @@ function Work() {
               </ProjectContent>
             </ProjectInstance>
           </Link>
-          <Link to="/acessible-support">
-            <ProjectInstance>
-              <ProjectCover>
-                {" "}
-                <img src="/images/bg-small.png" alt="" />
-              </ProjectCover>
-              <ProjectContent>
-                <ProjectTitle>
-                  How to make users aware of our help center?
-                </ProjectTitle>
-                <Projecttag>Support</Projecttag>
-              </ProjectContent>
-            </ProjectInstance>
-          </Link>
+
           <Link to="/determining-product-metrics">
             <ProjectInstance>
               <ProjectCover>
@@ -138,7 +129,7 @@ function Work() {
   )
 }
 
-export default Work
+export default Support
 const TTWrapper = styled.div`
   max-width: 1280px;
   margin: 160px auto;
@@ -193,7 +184,6 @@ const ProjectInstance = styled.div`
 
   border-radius: 4px;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
-
   :hover {
     box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.15), 0 0 2px 0 rgba(0, 0, 0, 0.15);
   }
@@ -234,4 +224,23 @@ const Projecttag = styled.button`
   background: #fefefe;
   font-size: 12px;
   font-weight: 400;
+`
+const ContentList = styled.li`
+  margin: 0 0 12px 48px;
+  padding: 0;
+  list-style-type: disc;
+`
+const PortfolioImage = styled.div`
+  margin: 80px auto;
+  width: 900px;
+  height: auto;
+  img {
+    width: 900px;
+  }
+  @media (max-width: 450px) {
+    img {
+      width: 320px;
+      height: 240px;
+    }
+  }
 `

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons / check_circle-24px.svg Copy</title>
+    <defs>
+        <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z M10,17 L5,12 L6.41,10.59 L10,14.17 L17.59,6.58 L19,8 L10,17 Z" id="path-1"></path>
+    </defs>
+    <g id="🖥-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home--Redesign" transform="translate(-1043.000000, -4587.000000)">
+            <g id="About-FP" transform="translate(0.000000, 4393.000000)">
+                <g id="Group-29" transform="translate(1040.000000, 148.000000)">
+                    <g id="Group-26" transform="translate(0.000000, 44.000000)">
+                        <g id="Icons-/-check_circle-24px.svg-Copy" transform="translate(1.000000, 0.000000)">
+                            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Shape" fill-rule="nonzero"></g>
+                            <polygon id="Colours" fill="#88A6AE" mask="url(#mask-2)" points="0 0 24 0 24 24 0 24"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -59,7 +59,7 @@ function About() {
         </Mypic>
         <Contentrow>
           <DetailsReadfirst>
-            Hi, I’m Karuti Joy. I am a UX/UI designer and creative developer
+            Hi, I’m Karuti Joy. I am a Product designer and Front-end developer
             based Nairobi, Kenya. I am a software engineering graduate who is
             also pursuing an MBA.
           </DetailsReadfirst>
@@ -71,7 +71,7 @@ function About() {
           <Details>
             My satisfaction as a designer is to have a product that is usable
             and used.This is a collection of design projects that i have worked
-            on.It’s a mixture of work projects and freelance projects.
+            on.
           </Details>
           <Details>
             My development stack is focused on performance & SEO optimized

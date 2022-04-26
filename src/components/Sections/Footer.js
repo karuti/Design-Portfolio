@@ -9,20 +9,19 @@ function Footer(props) {
       <FooterContentWrapper>
         <Menugroup>
           {" "}
-          <Logo>
-            <img
-              src="/images/Black bg  Logo.png"
-              style={{ width: "160px" }}
-              alt=""
-            />
-          </Logo>
+          <Link to="/">
+            <Logo>
+              <img
+                src="/images/Black bg  Logo.png"
+                style={{ width: "160px" }}
+                alt=""
+              />
+            </Logo>
+          </Link>
         </Menugroup>
 
         <Menugroup>
           <Title>Quick Links</Title>
-          <Link to="/">
-            <MenuLink>Home</MenuLink>
-          </Link>
 
           <Link to="/about">
             <MenuLink>About</MenuLink>
@@ -30,9 +29,9 @@ function Footer(props) {
           <Link to="/work">
             <MenuLink>Work</MenuLink>
           </Link>
-          <Link to="/blog">
+          {/* <Link to="/blog">
             <MenuLink>Blog</MenuLink>
-          </Link>
+          </Link> */}
           <Link to="/contact">
             <MenuLink>Contact</MenuLink>
           </Link>
