@@ -38,6 +38,12 @@ module.exports = {
         sv: 6,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
+    },
     `@contentful/rich-text-react-renderer`,
     `@contentful/rich-text-types`,
 
