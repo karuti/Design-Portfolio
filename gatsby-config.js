@@ -39,7 +39,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-remark-responsive-iframe`,
       options: {
         plugins: [`gatsby-remark-responsive-iframe`],
       },
